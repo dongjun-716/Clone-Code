@@ -8,7 +8,14 @@
   padding-top: 15px;
   padding-left: 300px;
   padding-right: 300px;
+  transition: all 0.5s ease;
+}
 
+.background-effect {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease;
 }
 
 .head_logo {
