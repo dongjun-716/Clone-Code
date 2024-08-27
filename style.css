@@ -14,6 +14,7 @@
 .background-effect {
   position: absolute;
   height: 100%;
+  top: 0;
   width: 0;
   transition: width 0.3s ease;
 }
@@ -51,7 +52,11 @@
   display: block;
   text-align: center;
   width: 100%;
-  padding: 10px 0;
+  padding: 3px 0;
+  font-family: "Dongle", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
 }
 
 .head_menu ul li ul {
@@ -69,6 +74,14 @@
   margin: 0;
 }
 
+.head_menu ul li ul li a{
+  font-family: "Dongle", sans-serif;
+  font-weight: 400 !important;
+  font-style: normal;
+  padding: 0px;
+}
+
+
 .head_sns {
   display: flex; 
 }
@@ -84,4 +97,9 @@
 .head_sns img {
   width: 35px;
   height: 35px;
+  transition: transform 0.3s ease;
+}
+
+.head_sns img:hover {
+  transform: scale(1.2);
 }

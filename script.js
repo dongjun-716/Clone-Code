@@ -13,7 +13,12 @@ document.querySelectorAll(".head_menu a").forEach((a) => {
     const bgEffect = document.querySelector(".background-effect");
 
     bgEffect.style.width = `${this.offsetWidth}px`;
-    bgEffect.style.left = `${this.getBoundingClientRect().left}px`;
+    bgEffect.style.left = `${this.getBoundingClientRect().left - 8}px`;
     bgEffect.style.backgroundColor = "#fbff00";
+  });
+  a.addEventListener("mouseleave", function () {
+    const bgEffect = document.querySelector(".background-effect");
+    
+    bgEffect.style.width = "0px";
   });
 });
