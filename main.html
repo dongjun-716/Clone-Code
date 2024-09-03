@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500;600;700&display=swap"
-      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>메가MGC커피</title>
   </head>
@@ -16,6 +18,7 @@
       <div class="background-effect"></div>
       <div class="head_logo">
         <img src="img/logo_b.png" class="logo_b" />
+        <img src="img/logo_y.png" class="logo_y" />
       </div>
       <div class="head_menu">
         <ul>
@@ -105,40 +108,50 @@
       <div class="head_sns">
         <ul>
           <li>
-            <a href="https://blog.naver.com/ekddusekddus"><img src="img/blog.png" /></a>
+            <a href="https://blog.naver.com/ekddusekddus"
+              ><img src="img/blog.png"
+            /></a>
           </li>
           <li>
-            <a href="https://www.facebook.com/mega.mgc.coffee.official"><img src="img/facebook.png" /></a>
+            <a href="https://www.facebook.com/mega.mgc.coffee.official"
+              ><img src="img/facebook.png"
+            /></a>
           </li>
           <li>
-            <a href="https://www.instagram.com/mega.mgc.coffee_official/"><img src="img/instagram.png" /></a>
+            <a href="https://www.instagram.com/mega.mgc.coffee_official/"
+              ><img src="img/instagram.png"
+            /></a>
           </li>
           <li>
-            <a href="https://smartstore.naver.com/megamgccoffee"><img src="img/shop.png" /></a>
+            <a href="https://smartstore.naver.com/megamgccoffee"
+              ><img src="img/shop.png"
+            /></a>
           </li>
         </ul>
       </div>
     </div>
-    <!--Main Section-->
-    <section class="main slider-container">
-      <div class="slider">
-        <div class="slide"><img src="img/main-img1.jpg"></div>
-        <div class="slide"><img src="img/main-img2.jpg"></div>
-        <div class="slide"><img src="img/main-img3.jpg"></div>
-        <div class="slide"><img src="img/main-img4.jpg"></div>
-        <div class="slide"><img src="img/main-img5.jpg"></div>
-        <div class="slide"><img src="img/main-img6.jpg"></div>
-        <div class="slide"><img src="img/main-img7.jpg"></div>
-      </div>
-    </section>
-    <!--Menu Section-->
-    <section class="menu"></section>
-    <!--Franchise Section-->
-    <section class="franchise"></section>
-    <!--Mega Section-->
-    <section class="mega"></section>
-    <!--Event Section-->
-    <section class="event"></section>
+    <div class="container">
+      <!--Main Section-->
+      <section class="main slider-container s-slide">
+        <div class="slider">
+          <div class="slide"><img src="img/main-img1.jpg" /></div>
+          <div class="slide"><img src="img/main-img2.jpg" /></div>
+          <div class="slide"><img src="img/main-img3.jpg" /></div>
+          <div class="slide"><img src="img/main-img4.jpg" /></div>
+          <div class="slide"><img src="img/main-img5.jpg" /></div>
+          <div class="slide"><img src="img/main-img6.jpg" /></div>
+          <div class="slide"><img src="img/main-img7.jpg" /></div>
+        </div>
+      </section>
+      <!--Menu Section-->
+      <section class="menu s-slide" style="background-color: blue;"></section>
+      <!--Franchise Section-->
+      <section class="franchise s-slide" style="background-color: red;"></section>
+      <!--Mega Section-->
+      <section class="mega s-slide" style="background-color: gold;"></section>
+      <!--Event Section-->
+      <section class="event s-slide" style="background-color: lawngreen;"></section>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

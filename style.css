@@ -25,10 +25,20 @@
 
 .head_logo {
   width: 200px; height: 71px;
+  position: relative;
 }
 
 .logo_b {
   width: 200px; height: 41px;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.logo_y {
+  width: 200px; height: 41px;
+  position: absolute;
+  top: 0; left: 0;
+  opacity: 0;
 }
 
 .head_menu {
@@ -109,6 +119,20 @@
   transform: scale(1.2);
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow: hidden;
+}
+
+.s-slide {
+  flex: 1 0 100%;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
 .slider-container{
   width: 100%;
   overflow: hidden;
@@ -118,10 +142,12 @@
 
 .slider{
   display: flex;
+  transition: transform 0.5s ease;
 }
 
 .slide{
   min-width: 100%;
+  transition: transform 0.5s ease;
 }
 
 .slide img{
