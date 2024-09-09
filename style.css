@@ -80,7 +80,7 @@
   padding: 0;
 }
 
-.head_menu ul li:hover ul {
+.head_menu ul:hover li ul {
   display: block;
 }
 
@@ -153,4 +153,65 @@
 .slide img{
   width: 100%;
   display: block;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.menu-text {
+  margin: 0 136px 150px 387px;
+}
+
+.menu-text h5 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 25px;
+}
+.menu-text h1 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 60px;
+}
+.menu-text h2 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 60px;
+  background-color: #FDD000;
+  width: 460px;
+  height: 65px;
+  line-height: 50px;
+  margin-top: -5px;
+  padding-left: 10px;
+}
+.menu-text h4 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 25px;
+}
+.menu-text p {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.menu-list {
+  display: flex;
+  overflow: hidden;
+}
+
+.menu-slide {
+  width: 430px;
+  height: 590px;
+}
+
+.menu-list-img img {
+  width: 418px;
+  height: 418px;
 }
