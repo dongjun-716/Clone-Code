@@ -6,7 +6,12 @@ document.querySelectorAll(".head_menu a").forEach((link) => {
 });
 
 document.querySelector(".header").addEventListener("mouseleave", function () {
+  const main = document.querySelector(".main");
+
   this.style.height = "80px";
+  if (main.getBoundingClientRect().top < -500) {
+    this.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.2)";
+  }
 });
 
 // 헤더 메뉴 background-effect
@@ -109,6 +114,7 @@ document.querySelector(".container").addEventListener("wheel", (event) => {
     logoB.style.opacity = "0";
     logoY.style.opacity = "1";
     header.style.backgroundColor = "#ffffff";
+    header.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.2)";
   } else {
     container.scrollBy({
       top: -window.innerHeight,
@@ -121,8 +127,32 @@ document.querySelector(".container").addEventListener("wheel", (event) => {
       logoB.style.opacity = "1";
       logoY.style.opacity = "0";
       header.style.backgroundColor = "";
+      header.style.boxShadow = "";
     }
   }
 
   event.preventDefault();
+});
+
+// Menu-text Animation
+document.addEventListener('DOMContentLoaded', function () {
+  const observerOptions = {
+    root: null, // 뷰포트 기준
+    threshold: 0.1 // 10%가 보이면 애니메이션 시작
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show');
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  const animatedTexts = document.querySelectorAll('.menu-text h1, .menu-text h2, .menu-text h4, .menu-text h5, .menu-text p, .menu-text button');
+  animatedTexts.forEach(text => observer.observe(text));
 });
