@@ -156,3 +156,19 @@ document.addEventListener('DOMContentLoaded', function () {
   const animatedTexts = document.querySelectorAll('.menu-text h1, .menu-text h2, .menu-text h4, .menu-text h5, .menu-text p, .menu-text button');
   animatedTexts.forEach(text => observer.observe(text));
 });
+
+const MprevBtn = document.querySelector('.prev-btn');
+const MnextBtn = document.querySelector('.next-btn');
+const Mmenulist = document.querySelector('.menu-list');
+const Mslides = document.querySelectorAll('.menu-slide');
+
+let McurrentIndex = 0;
+const MtatalSlides = Mslides.length;
+const MselectedHeight = 590;
+const MunselectedHeight = 420;
+const MmarginTop = 170;
+
+function MupdateSliderPosition() {
+  const MslideWidth = Mslides[0].clientWidth + parseInt(window.getComputedStyle(Mslides[0].marginRight)) + parseInt(window.getComputedStyle(Mslides[0].marginLeft));
+  let MtotalDistance 
+}

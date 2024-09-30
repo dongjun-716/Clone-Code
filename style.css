@@ -254,10 +254,13 @@
   opacity: 1;
   transform: translateY(0);
 }
+.menu-slider-container {
+  position: relative;
+  overflow: hidden;
+}
 
 .menu-list {
   display: flex;
-  overflow: hidden;
 }
 
 .menu-slide {
@@ -266,6 +269,7 @@
   border: 1px solid rgba(0, 0, 0, 0.13);
   border-radius: 20px;
   margin: 0 15px;
+  box-sizing: border-box;
 }
 
 .menu-list-img img {
@@ -292,4 +296,10 @@
   font-weight: 200;
   font-style: normal;
   font-size: 15px;
+}
+
+
+.prev-btn, .next-btn{
+  background-color: transparent;
+  border: none;
 }
