@@ -135,40 +135,84 @@ document.querySelector(".container").addEventListener("wheel", (event) => {
 });
 
 // Menu-text Animation
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   const observerOptions = {
     root: null, // 뷰포트 기준
-    threshold: 0.1 // 10%가 보이면 애니메이션 시작
+    threshold: 0.1, // 10%가 보이면 애니메이션 시작
   };
 
   const observerCallback = (entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('show');
+        entry.target.classList.add("show");
       } else {
-        entry.target.classList.remove('show');
+        entry.target.classList.remove("show");
       }
     });
   };
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  const animatedTexts = document.querySelectorAll('.menu-text h1, .menu-text h2, .menu-text h4, .menu-text h5, .menu-text p, .menu-text button');
-  animatedTexts.forEach(text => observer.observe(text));
+  const animatedTexts = document.querySelectorAll(
+    ".menu-text h1, .menu-text h2, .menu-text h4, .menu-text h5, .menu-text p, .menu-text button"
+  );
+  animatedTexts.forEach((text) => observer.observe(text));
 });
 
-const MprevBtn = document.querySelector('.prev-btn');
-const MnextBtn = document.querySelector('.next-btn');
-const Mmenulist = document.querySelector('.menu-list');
-const Mslides = document.querySelectorAll('.menu-slide');
+// menu section 슬라이드
+const MprevBtn = document.querySelector(".prev-btn");
+const MnextBtn = document.querySelector(".next-btn");
+const Mmenulist = document.querySelector(".menu-list");
+const Mslides = document.querySelectorAll(".menu-slide");
 
 let McurrentIndex = 0;
-const MtatalSlides = Mslides.length;
+const MtotalSlides = Mslides.length;
 const MselectedHeight = 590;
 const MunselectedHeight = 420;
 const MmarginTop = 170;
 
-function MupdateSliderPosition() {
-  const MslideWidth = Mslides[0].clientWidth + parseInt(window.getComputedStyle(Mslides[0].marginRight)) + parseInt(window.getComputedStyle(Mslides[0].marginLeft));
-  let MtotalDistance 
+//슬라이드 텍스트 영역 숨기기
+function MtoggleSlideText() {
+  Mslides.forEach((slide, index) => {
+    const textElement = slide.querySelector(".menu-list-text");
+    if (index === McurrentIndex) {
+      textElement.style.display = "block";
+      slide.style.height = `${MselectedHeight}px`;
+      slide.style.marginTop = "0";
+    } else {
+      textElement.style.display = "none";
+      slide.style.height = `${MunselectedHeight}px`;
+      slide.style.marginTop = `${MmarginTop}px`;
+    }
+  });
 }
+
+// 슬라이드 이동함수
+function MupdateSliderPosition() {
+  const MslideWidth =
+    Mslides[0].clientWidth +
+    parseInt(window.getComputedStyle(Mslides[0]).marginRight) +
+    parseInt(window.getComputedStyle(Mslides[0]).marginLeft) + 2;
+  let MtotalDistance = MslideWidth * McurrentIndex;
+
+  Mmenulist.style.transform = `translateX(${-MtotalDistance}px)`;
+
+  MtoggleSlideText(); // 슬라이드 텍스트 업데이트
+}
+
+MprevBtn.addEventListener("click", function () {
+  if (McurrentIndex > 0) {
+    McurrentIndex--;
+    MupdateSliderPosition();
+  }
+});
+
+MnextBtn.addEventListener("click", function () {
+  if (McurrentIndex < MtotalSlides - 1) {
+    McurrentIndex++;
+    MupdateSliderPosition();
+  }
+});
+
+MupdateSliderPosition();
+MtoggleSlideText();

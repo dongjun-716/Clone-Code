@@ -261,6 +261,7 @@
 
 .menu-list {
   display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
 .menu-slide {
@@ -270,6 +271,7 @@
   border-radius: 20px;
   margin: 0 15px;
   box-sizing: border-box;
+  transition: margin-top 0.5s ease, height 0.5s ease;
 }
 
 .menu-list-img img {
@@ -302,4 +304,25 @@
 .prev-btn, .next-btn{
   background-color: transparent;
   border: none;
+  font-size: 60px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.prev-btn:hover svg path,
+.next-btn:hover svg path {
+  stroke: black;
+  transition: stroke 0.5s ease;
+}
+
+.prev-btn {
+  position: absolute;
+  left: 51%;
+  top: 15%;
+}
+
+.next-btn {
+  position: absolute;
+  left: 56%;
+  top: 15%;
 }
