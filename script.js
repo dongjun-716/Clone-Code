@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
   const animatedTexts = document.querySelectorAll(
-    ".menu-text h1, .menu-text h2, .menu-text h4, .menu-text h5, .menu-text p, .menu-text button"
+    ".menu-text h1, .menu-text h2, .menu-text h4, .menu-text h5, .menu-text p, .menu-text button, .franchise-text h1, .franchise-text h2, .franchise-text h3, .franchise-text h4, .franchise-text h5, .franchise-text p"
   );
   animatedTexts.forEach((text) => observer.observe(text));
 });
@@ -192,7 +192,8 @@ function MupdateSliderPosition() {
   const MslideWidth =
     Mslides[0].clientWidth +
     parseInt(window.getComputedStyle(Mslides[0]).marginRight) +
-    parseInt(window.getComputedStyle(Mslides[0]).marginLeft) + 2;
+    parseInt(window.getComputedStyle(Mslides[0]).marginLeft) +
+    2;
   let MtotalDistance = MslideWidth * McurrentIndex;
 
   Mmenulist.style.transform = `translateX(${-MtotalDistance}px)`;
@@ -216,3 +217,16 @@ MnextBtn.addEventListener("click", function () {
 
 MupdateSliderPosition();
 MtoggleSlideText();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.querySelector(".franchise-video iframe");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        video.src += "&autoplay=1";
+      }
+    });
+  });
+
+  observer.observe(video);
+});

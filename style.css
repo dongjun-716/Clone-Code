@@ -326,3 +326,128 @@
   left: 56%;
   top: 15%;
 }
+
+.franchise {
+  background-color: #fdd000;
+  display: flex;
+}
+
+.franchise-text {
+  margin-top: 240px;
+  padding-left: 430px;
+  width: 50%;
+}
+
+.franchise-text h4 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 25px;
+}
+
+.franchise-text h2 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 57px;
+  line-height: 1;
+  letter-spacing: -2px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease-out;
+  transition-delay: 0.3s;
+}
+
+.franchise-text h1 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 57px;
+  line-height: 1;
+  letter-spacing: -2px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease-out;
+  transition-delay: 0.3s;
+}
+
+.franchise-text h3 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 40px;
+  display: flex;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease-out;
+  transition-delay: 0.6s;
+}
+
+.franchise-text h3 p {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 23px;
+  margin-top: 23px;
+  margin-left: 5px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease-out;
+  transition-delay: 0.6s;
+}
+
+.franchise-text h5 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: -1px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease-out;
+  transition-delay: 0.8s;
+}
+
+.franchise-text p {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease-out;
+  transition-delay: 1s;
+}
+
+.franchise-text h1.show,
+.franchise-text h2.show,
+.franchise-text h3.show,
+.franchise-text h4.show,
+.franchise-text h5.show,
+.franchise-text p.show,
+.franchise-text button.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.franchise-video {
+  width: 50%;
+  margin-top: 280px;
+  padding-right: 300px;
+}
+
+.franchise-video button {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  width: 515px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border: solid 1px black;
+  margin-top: -4px;
+}
+
