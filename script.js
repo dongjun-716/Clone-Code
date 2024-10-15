@@ -1,3 +1,42 @@
+document.querySelectorAll("nav ul li").forEach((li, index) => {
+  li.addEventListener("click", () => {
+    const sections = ["main", "menu", "franchise", "mega", "event"];
+    const sectionId = sections[index];
+
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+const sections = ["main", "menu", "franchise", "mega", "event"];
+const navItems = document.querySelectorAll("nav ul li");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    const visibleSections = entries.filter((entry) => entry.isIntersecting);
+
+    if (visibleSections.length === 1) {
+      const visibleSection = visibleSections[0].target
+      setTimeout(() => {
+        const index = sections.indexOf(visibleSection.id);
+
+        if (index !== -1) {
+          navItems.forEach((item) => {
+            item.classList.remove("selected");
+          });
+
+          navItems[index].classList.add("selected");
+        }
+      }, 500); // 0.5초 지연 (500ms)
+    }
+  },
+  { threshold: 1 }
+); // 섹션이 100% 보일 때 동작
+
+sections.forEach(section => {
+  const sectionElement = document.getElementById(section);
+  observer.observe(sectionElement);
+})
+
 // 헤더 크기 조절
 document.querySelectorAll(".head_menu a").forEach((link) => {
   link.addEventListener("mouseenter", function () {
@@ -154,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
   const animatedTexts = document.querySelectorAll(
-    ".menu-text h1, .menu-text h2, .menu-text h4, .menu-text h5, .menu-text p, .menu-text button, .franchise-text h1, .franchise-text h2, .franchise-text h3, .franchise-text h4, .franchise-text h5, .franchise-text p"
+    ".menu-text h1, .menu-text h2, .menu-text h4, .menu-text h5, .menu-text p, .menu-text button, .franchise-text h1, .franchise-text h2, .franchise-text h3, .franchise-text h4, .franchise-text h5, .franchise-text p, .mega-text h1, .mega-text h2, .mega-text h3, .mega-text h4, .mega-text h5, .mega-text p, .mega-text button, .event-text h1"
   );
   animatedTexts.forEach((text) => observer.observe(text));
 });
